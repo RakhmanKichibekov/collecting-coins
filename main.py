@@ -22,18 +22,9 @@ score = pygame.image.load("pictures/check.png").convert()
 score = pygame.transform.scale(score, (score.get_width() // 2.5, score.get_height() // 2.5))
 score.set_colorkey(WHITE)
 f = pygame.font.SysFont('arial', 100)
-# pygame.draw.rect(sc, PURPLE, (10, 10, 50, 100), 2)
-#
-# pygame.draw.line(sc, GREEN, (200, 20), (350, 50), 5)
-# pygame.draw.line(sc, GREEN, (200, 40), (350, 70))
-#
-# pygame.draw.lines(sc, RED, True, [(200, 80), (250, 80), (300, 200)], 2)
-# pygame.draw.aalines(sc, RED, True, [(300, 80), (350, 80), (400, 200)])
-#
-# pygame.draw.polygon(sc, PURPLE, [[150, 210], [180, 250], [90, 290], [30,230]], 2)
 
 pygame.display.update()
-FPS = 60
+FPS = 60 # Кадров в секунду
 clock = pygame.time.Clock()
 
 rocks_image = ['coin.png', 'coin2.png']
@@ -46,8 +37,8 @@ def createRock(group):
     speed = randint(8, 16)
     return Ball(x, 0, rocks_surf[indx], speed, group)
 
-game_score = 0
-game_score2 = 0
+game_score = 0 #счёт синей машинки
+game_score2 = 0 #счёт красной машинки
 def collideBalls():
     global game_score
     global game_score2
@@ -63,7 +54,6 @@ def collideBalls():
 
 surf = pygame.Surface((200, 200))
 surf.fill(RED)
-# sc.blit(surf, (50, 50))
 pygame.display.update()
 
 rocks = pygame.sprite.Group()
@@ -117,7 +107,7 @@ while flRun:
             x2 = W * 2.5 -30
 
     sc.fill(WHITE)
-    car_surf = pygame.image.load("myCarNew.png").convert()
+    car_surf = pygame.image.load("pictures/myCarNew.png").convert()
     car_surf = pygame.transform.scale(car_surf, (car_surf.get_width() // 2.5, car_surf.get_height() // 2.5))
     car_rect = car_surf.get_rect(center=(x, y))
     car_surf.set_colorkey(WHITE)
