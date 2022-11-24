@@ -8,17 +8,17 @@ pygame.time.set_timer(pygame.USEREVENT, 1000)
 W, H = 600, 400
 sc = pygame.display.set_mode((W, H), pygame.DOUBLEBUF | pygame.RESIZABLE)
 pygame.display.set_caption("Game of the year by Rakhman")
-pygame.display.set_icon(pygame.image.load("car.png"))
-pygame.mixer.music.load("musicBg.mp3")
+pygame.display.set_icon(pygame.image.load("pictures/car.png"))
+pygame.mixer.music.load("musics/musicBg.mp3")
 pygame.mixer.music.play(-1)
-music1 = pygame.mixer.Sound("musicMoney.mp3")
+music1 = pygame.mixer.Sound("musics/musicMoney.mp3")
 
 PURPLE = (255, 100, 255)
 GREEN = (0, 255, 0)
 RED = (255, 0, 0)
 WHITE = (255, 255, 255)
 
-score = pygame.image.load("check.png").convert()
+score = pygame.image.load("pictures/check.png").convert()
 score = pygame.transform.scale(score, (score.get_width() // 2.5, score.get_height() // 2.5))
 score.set_colorkey(WHITE)
 f = pygame.font.SysFont('arial', 100)
@@ -37,7 +37,7 @@ FPS = 60
 clock = pygame.time.Clock()
 
 rocks_image = ['coin.png', 'coin2.png']
-rocks_surf = [pygame.image.load(path).convert() for path in rocks_image]
+rocks_surf = [pygame.image.load('pictures/'+path).convert() for path in rocks_image]
 
 
 def createRock(group):
@@ -122,12 +122,12 @@ while flRun:
     car_rect = car_surf.get_rect(center=(x, y))
     car_surf.set_colorkey(WHITE)
 
-    car_surf2 = pygame.image.load("car4.png").convert()
+    car_surf2 = pygame.image.load("pictures/car4.png").convert()
     car_surf2 = pygame.transform.scale(car_surf2, (car_surf.get_width() // 2, car_surf.get_height()))
     car_rect2 = car_surf.get_rect(center=(x2, y2))
     car_surf2.set_colorkey(WHITE)
 
-    bg_surf = pygame.image.load("bg.png").convert()
+    bg_surf = pygame.image.load("pictures/bg.png").convert()
     bg_surf = pygame.transform.scale(bg_surf, (bg_surf.get_width() * 2, bg_surf.get_height() * 1.3))
 
     collideBalls()
